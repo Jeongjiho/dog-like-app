@@ -1,6 +1,6 @@
 {
   "name": "dog_like_app",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -21,9 +21,9 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.5",
+    "react-native-image-picker": "^4.10.0",
     "react-native-web": "~0.18.7",
-    "react-native-webview": "11.23.0",
-    "react-native-webview-android-file-upload": "github:andreipfeiffer/react-native-webview-android-file-upload"
+    "react-native-webview": "11.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

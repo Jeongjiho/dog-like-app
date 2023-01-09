@@ -1,19 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
 import React, { Component } from 'react';
 import { WebView } from 'react-native-webview';
 import { Camera } from "expo-camera";
-import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import ImagePicker from 'react-native-image-picker';
 
 
 class App extends Component {
 
     async checkPermission() {
         const cameraPermission = await Camera.requestCameraPermissionsAsync();
-        ImagePicker.requestCameraPermissionsAsync();
-        const imagePermission = await ImagePicker.requestMediaLibraryPermissionsAsync(false);
 
-
+        //https://blog.effectussoftware.com/react-native-image-picker/
         /*WebView.isFileUploadSupported().then(res => {
           if (res === true) {
             console.log('true!!!');
@@ -21,6 +19,59 @@ class App extends Component {
             console.log('false!!!');
           }
         });*/
+
+        /*let options = {
+
+            storageOptions: {
+
+              skipBackup: true,
+
+              path: 'images',
+
+            },
+
+          };
+
+
+          console.log('들어옴');
+          ImagePicker.launchImageLibrary(options, (res) => {
+          console.log('들어옴1');
+
+            console.log('Response = ', res);
+
+            if (res.didCancel) {
+
+              console.log('User cancelled image picker');
+
+            } else if (res.error) {
+
+              console.log('ImagePicker Error: ', res.error);
+
+            } else if (res.customButton) {
+
+              console.log('User tapped custom button: ', res.customButton);
+
+              alert(res.customButton);
+
+            } else {
+
+              const source = { uri: res.uri };
+
+              console.log('response', JSON.stringify(res));
+
+              this.setState({
+
+                filePath: res,
+
+                fileData: res.data,
+
+                fileUri: res.uri
+
+              });
+
+            }
+
+          });
 
 
 
@@ -32,7 +83,7 @@ class App extends Component {
         if (imagePermission.granted === false) {
           alert("Permission to access camera roll is required!");
           return;
-        }
+        }*/
 
         /*console.log('===========================');
         console.log(imagePermission);*/
